@@ -1,3 +1,4 @@
+# PC-Select
 Selects the number of SNPs to include in the GRM by CV log-likelihood.
 
 To run, first convert files to eigenstrat format (http://www.hsph.harvard.edu/alkes-price/software/).
