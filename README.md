@@ -6,11 +6,14 @@ This example assumes that you are in the directory of .m files and you have a di
 
 1) Run a preprocessor to generate working files
 
+```
 n_pcs = 5;
 preprocess('data/MS.geno', 'data', n_pcs);
+```
 
-2) 
+2) Run CV code 
 
+```
 top_k_choices = [10, 100, 1000, 10000];
 res = zeros(top_k_choices, 1);
 
@@ -20,3 +23,4 @@ end
 
 [~, I] = min(res);
 top_k(I)
+```
