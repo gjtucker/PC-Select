@@ -18,7 +18,7 @@ Creates data/GRM.mat, data/pcs.mat.
 
 ```matlab
 top_k_choices = [10, 100, 1000, 10000];
-res = zeros(top_k_choices, 1);
+res = zeros(length(top_k_choices), 1);
 
 for i = 1:length(top_k_choices)
     res(i) = cross_validation('data', 'data/phen.txt', ...
@@ -26,5 +26,5 @@ for i = 1:length(top_k_choices)
 end
 
 [~, I] = min(res);
-top_k(I)
+top_k_choices(I)
 ```
