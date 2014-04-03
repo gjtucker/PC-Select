@@ -3,7 +3,7 @@ Selects the number of SNPs to include in the GRM by CV log-likelihood.
 
 To run, first convert files to eigenstrat format (http://www.hsph.harvard.edu/alkes-price/software/).
 
-This example assumes that you are in the directory of .m files and you have a directory data with the genotypes in eigenstrat format.  The phenotype is data/phen.txt and covariates are data/covars.txt.
+This example assumes that you are in the directory of .m files and you have a data directory with the genotypes in eigenstrat format.  The phenotype is data/phen.txt and covariates are data/covars.txt.
 
 1) Run a preprocessor to generate working files
 
