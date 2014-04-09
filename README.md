@@ -13,7 +13,7 @@ All of the following commands should be run from the src directory.
 run_sim_geno_sim_pheno
 ```
 
-Runs the simulation in Table 1.  Briefly, creates 100 simulated data sets with 1000 individuals and 10000 markers with p = 0.05, 0.005 markers causal and with or without population stratification.  Results are plotted.
+Runs the simulation in Table 1.  Briefly, creates 100 simulated data sets with 1000 individuals and 10000 markers with p = 0.05, 0.005 markers causal and with or without population stratification.  See manuscript for details.
 
 ## Real genotypes and simulated phenotypes
 
@@ -34,7 +34,7 @@ Then run
 sh ../working/5k_individuals/sh_src/run.sh
 ```
 
-Runs the simulation in Table 2.  Briefly, creates 200 simulated data sets with 5000 individuals and 50000 markers (subsampled from real genotypes) with p = 0.05, 0.005 markers causal and with or without population stratification.
+Runs the simulation in Table 2.  Briefly, creates 200 simulated data sets with 5000 individuals and 50000 markers (subsampled from real genotypes) with p = 0.05, 0.005 markers causal and with or without population stratification.  See manuscript for details.
 
 To plot results
 
