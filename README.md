@@ -7,7 +7,7 @@
 * Download GCTA (http://www.complextraitgenomics.com/software/gcta/mlmassoc.html)
 * (Optional) The real genotypes and phenotypes are made available by the WTCCC2 (http://www.wtccc.org.uk/ccc2/).  To run those analyses, acquire the data from WTCCC2 and convert to eigenstrat format ((http://www.hsph.harvard.edu/alkes-price/software/).
 
-All of the following commands should be run from the src directory.
+All of the following commands should be run from the src directory in Matlab unless otherwise specified.
 
 ## Simulated genotypes and phenotypes
 
@@ -32,7 +32,7 @@ generate_data_and_runner('../working/5k_individuals', 1, 200)
 
 This generates a shell script that starts up many parallel jobs on an LSF scheduling system.
 
-2) Then run
+2) Then in the shell run
 
 ```
 sh ../working/5k_individuals/sh_src/run.sh
@@ -78,7 +78,7 @@ top_k_choices(I)
 ```
 ## Real genotypes and real phenotypes
 
-For the WTCCC2 MS data, we found that cross-validation selected all markers for both PC-Select and FaST-LMM Select.  We used GCTA (http://www.complextraitgenomics.com/software/gcta/) to compute the association statistics in this case.  We ran the following to do that
+For the WTCCC2 MS data, we found that cross-validation selected all markers for both PC-Select and FaST-LMM Select.  We used GCTA (http://www.complextraitgenomics.com/software/gcta/) to compute the association statistics in this case.  We ran the following in the shell to do that
 
 ```
 gcta64 --bfile data/MS_ALL --autosome --make-grm --out data/MS_ALL --thread-num 8
