@@ -1,8 +1,10 @@
 # Accompanying code for PC-Select
 
-To run analysis, first set up the directory:
+## Setup
+
 * Run setup.sh 
 * Download FaSTLMM Select from (http://research.microsoft.com/en-us/um/redmond/projects/mscompbio/fastlmm/) and put it in this directory.
+* Download GCTA (http://www.complextraitgenomics.com/software/gcta/mlmassoc.html)
 * (Optional) The real genotypes and phenotypes are made available by the WTCCC2 (http://www.wtccc.org.uk/ccc2/).  To run those analyses, acquire the data from WTCCC2 and convert to eigenstrat format ((http://www.hsph.harvard.edu/alkes-price/software/).
 
 All of the following commands should be run from the src directory.
