@@ -23,7 +23,7 @@ Running this example requires real genotype data in plink binary format in the d
 
 ```matlab
 n_pcs = 5;
-preprocess('data/MS.geno', 'data', n_pcs);
+preprocess('data/MS_ALL.geno', 'data', n_pcs);
 preprocess_real_geno_sim_pheno
 generate_data_and_runner('../working/5k_individuals', 1, 200)
 ```
@@ -53,7 +53,7 @@ This example assumes that you are in the directory of .m files and you have a da
 
 ```matlab
 n_pcs = 5;
-preprocess('data/MS.geno', 'data', n_pcs);
+preprocess('data/MS_ALL.geno', 'data', n_pcs);
 ```
 
 Creates data/GRM.mat, data/pcs.mat.
