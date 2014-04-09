@@ -19,7 +19,7 @@ Runs the simulation in Table 1.  Briefly, creates 100 simulated data sets with 1
 
 Running this example requires real genotype data in plink binary format in the data directory.  First, convert the data into eigenstrat format. 
 
-Run a preprocessor to generate working files
+1) Run a preprocessor to generate working files
 
 ```matlab
 n_pcs = 5;
@@ -28,7 +28,7 @@ preprocess_real_geno_sim_pheno
 generate_data_and_runner('../working/5k_individuals', 1, 200)
 ```
 
-Then run
+2) Then run
 
 ```
 sh ../working/5k_individuals/sh_src/run.sh
@@ -36,7 +36,7 @@ sh ../working/5k_individuals/sh_src/run.sh
 
 Runs the simulation in Table 2.  Briefly, creates 200 simulated data sets with 5000 individuals and 50000 markers (subsampled from real genotypes) with p = 0.05, 0.005 markers causal and with or without population stratification.  See manuscript for details.
 
-To plot results
+3) To plot results
 
 ```matlab
 res = combine_results('../working/5k_individuals/results', 200, 500, 250);
@@ -72,3 +72,18 @@ end
 [~, I] = min(res);
 top_k_choices(I)
 ```
+## Real genotypes and real phenotypes
+
+For the WTCCC2 MS data, we found that cross-validation selected all markers for both PC-Select and FaST-LMM Select.  We used GCTA (http://www.complextraitgenomics.com/software/gcta/) to compute the association statistics in this case.  We used ran the following to do that
+
+```
+gcta64 --bfile data/MS_ALL --autosome --make-grm --out data/MS_ALL --thread-num 8
+gcta64 --grm data/MS_ALL --pca 5 --out data/MS_ALL
+gcta64 --mlma-loco --bfile data/MS_ALL --pheno data/phen.txt --out data/MS_ALL_pc --thread-num 8 --mlma-no-adj-covar --qcovar data/MS_ALL.eigenvec
+gcta64 --mlma-loco --bfile data/MS_ALL --pheno data/phen.txt --out MS_ALL_no_pc --thread-num 8 --mlma-no-adj-covar
+```
+
+where data/MS_ALL.{bim,bam,fam} contain the genotypes and phen.txt contains the phenotypes.
+
+
+
