@@ -7,21 +7,13 @@ res.data_generators = create_data_generators();
 res.runs = cell(length(res.data_generators), 1);
 
 for i = 1:length(res.data_generators)
-    res.runs{i} = cell(2 * n_samples, 1);
+    res.runs{i} = cell(n_samples, 1);
     for j = 1:n_samples
         res.runs{i}{j} = cell(length(res.models), 1);
         for k = 1:length(res.models)
             res.runs{i}{j}{k} = read_results( ...
-                sprintf('%s/results_25/res_data_%d_sample_%d_model_%d', ...
+                sprintf('%s/results/res_data_%d_sample_%d_model_%d', ...
                 working_path, i, j, k), m_null, m_causal);
-        end
-    end
-    for j = (n_samples + 1):(2*n_samples)
-        res.runs{i}{j} = cell(length(res.models), 1);
-        for k = 1:length(res.models)
-            res.runs{i}{j}{k} = read_results( ...
-                sprintf('%s/results_seed_3_correct/res_data_%d_sample_%d_model_%d', ...
-                working_path, i, j - n_samples, k), m_null, m_causal);
         end
     end
 end
@@ -69,19 +61,3 @@ data_generators{3}.name = 'p = 0.05';
 data_generators{4}.name = 'p = 0.005';
 
 end
-
-%{ 
-path = '../working/WTCCC2';
-
-real_geno = cell(4, 1);
-for i = 1:4
-    real_geno{i} = cell(100, 1);
-    for j = 1:100
-        seed = j + (i - 1)*100;
-        load(sprintf('%s/run_results_seed_%d_generator_%d.mat', ...
-            path, seed, i));
-        real_geno{i}{j} = res;
-    end
-end
-
-%}

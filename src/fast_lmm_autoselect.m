@@ -44,7 +44,7 @@ output = importdata(sprintf('../working/sim_geno_sim_pheno/%s.out.txt', base_fil
 % Reorder the output by the actual SNP ordering
 [~, I] = sort(output.data(:, 1));
 
-wald_stat = output.data(I, 12);
+wald_stat = output.data(I, 13);
 p_val = output.data(I, 5);
 lambda = lambda_GC(wald_stat);
 

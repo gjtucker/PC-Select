@@ -4,7 +4,7 @@ rng default;
 mkdir('../working');
 mkdir('../working/sim_geno_sim_pheno');
 
-n_samples = 2;
+n_samples = 100;
 
 %% Set up models
 cutoffs = [10, 30, 100, 300, 1000, 3000, 10000];
