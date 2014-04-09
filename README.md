@@ -74,7 +74,7 @@ top_k_choices(I)
 ```
 ## Real genotypes and real phenotypes
 
-For the WTCCC2 MS data, we found that cross-validation selected all markers for both PC-Select and FaST-LMM Select.  We used GCTA (http://www.complextraitgenomics.com/software/gcta/) to compute the association statistics in this case.  We used ran the following to do that
+For the WTCCC2 MS data, we found that cross-validation selected all markers for both PC-Select and FaST-LMM Select.  We used GCTA (http://www.complextraitgenomics.com/software/gcta/) to compute the association statistics in this case.  We ran the following to do that
 
 ```
 gcta64 --bfile data/MS_ALL --autosome --make-grm --out data/MS_ALL --thread-num 8
