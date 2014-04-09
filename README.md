@@ -15,9 +15,13 @@ Runs the simulation in Table 1.  Briefly, creates 100 simulated data sets with 1
 
 ## Real genotypes and simulated phenotypes
 
-Running this example requires real genotype data in plink binary format.
+Running this example requires real genotype data in plink binary format in the data directory.  First, convert the data into eigenstrat format. 
+
+Run a preprocessor to generate working files
 
 ```matlab
+n_pcs = 5;
+preprocess('data/MS.geno', 'data', n_pcs);
 preprocess_real_geno_sim_pheno
 generate_data_and_runner('../working/5k_individuals', 1, 200)
 ```
