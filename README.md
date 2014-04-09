@@ -28,6 +28,8 @@ preprocess_real_geno_sim_pheno
 generate_data_and_runner('../working/5k_individuals', 1, 200)
 ```
 
+This generates a shell script that starts up many parallel jobs on an LSF scheduling system.
+
 2) Then run
 
 ```
